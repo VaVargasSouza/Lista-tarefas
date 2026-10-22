@@ -1,0 +1,255 @@
+
+/* ===== CONFIGURAÇÕES GERAIS ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    padding: 50px 20px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #f1efff, #f8f7ff, #eeedff);
+    color: #24234b;
+}
+
+/* ===== CARTÃO PRINCIPAL ===== */
+main {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px;
+    background: #ffffff;
+    border: 1px solid #eeecff;
+    border-radius: 24px;
+    box-shadow: 0 15px 45px rgba(67, 56, 150, 0.10);
+}
+
+/* ===== CABEÇALHO ===== */
+header {
+    max-width: 900px;
+    margin: 0 auto 25px;
+    padding: 0 5px 25px;
+    border-bottom: 1px solid #e9e7f8;
+}
+
+header h1 {
+    font-size: clamp(28px, 5vw, 42px);
+    color: #29265c;
+    letter-spacing: -1px;
+}
+
+header h1::before {
+    content: "✓";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-right: 16px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #7770f5, #5548d9);
+    color: white;
+    font-size: 30px;
+    vertical-align: middle;
+}
+
+/* ===== TÍTULOS ===== */
+h2 {
+    margin-bottom: 18px;
+    color: #29265c;
+    font-size: 25px;
+}
+
+.formulario {
+    margin: 30px 0 40px;
+}
+
+.lista {
+    margin-top: 25px;
+}
+
+/* ===== FORMULÁRIO ===== */
+#formTarefa {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+#formTarefa label {
+    display: none;
+}
+
+#tarefa {
+    flex: 1;
+    min-width: 180px;
+    padding: 16px 18px;
+    border: 1px solid #d9d6fa;
+    border-radius: 12px;
+    background: #fff;
+    color: #29265c;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#tarefa::placeholder {
+    color: #8987a9;
+}
+
+#tarefa:focus {
+    border-color: #7065ed;
+    box-shadow: 0 0 0 4px rgba(112, 101, 237, 0.12);
+}
+
+/* ===== BOTÕES ===== */
+button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-1px);
+}
+
+button:focus-visible {
+    outline: 3px solid #aaa4ff;
+    outline-offset: 3px;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+#btnSalvar {
+    background: linear-gradient(135deg, #7569f0, #5848d7);
+    color: white;
+    padding: 15px 22px;
+    font-size: 15px;
+    box-shadow: 0 5px 12px rgba(88, 72, 215, 0.16);
+}
+
+#btnSalvar:hover {
+    box-shadow: 0 7px 18px rgba(88, 72, 215, 0.25);
+}
+
+#btnCancelar {
+    background: #eeeaff;
+    color: #5548c8;
+}
+
+/* ===== MENSAGENS ===== */
+#mensagem {
+    margin-top: 14px;
+    color: #5548c8;
+    font-size: 14px;
+}
+
+/* ===== LISTA DE TAREFAS ===== */
+#listaTarefas {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#listaTarefas > div {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 18px;
+    border: 1px solid #dedbff;
+    border-radius: 13px;
+    background: #faf9ff;
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+#listaTarefas > div:hover {
+    border-color: #c7c1ff;
+    box-shadow: 0 5px 15px rgba(67, 56, 150, 0.06);
+}
+
+#listaTarefas span {
+    flex: 1;
+    min-width: 100px;
+    overflow-wrap: anywhere;
+    font-size: 16px;
+}
+
+/* Editar */
+#listaTarefas button:nth-of-type(1) {
+    border: 1px solid #7569f0;
+    background: white;
+    color: #6558df;
+}
+
+/* Excluir */
+#listaTarefas button:nth-of-type(2) {
+    background: #fff0f0;
+    color: #df4f58;
+}
+
+/* Concluir / Reabrir */
+#listaTarefas button:nth-of-type(3) {
+    background: linear-gradient(135deg, #7569f0, #5848d7);
+    color: white;
+}
+
+/* ===== RESPONSIVIDADE PARA CELULARES ===== */
+@media (max-width: 600px) {
+    body {
+        padding: 20px 12px;
+    }
+
+    main {
+        padding: 22px 16px;
+        border-radius: 18px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    header h1::before {
+        width: 38px;
+        height: 38px;
+        margin-right: 9px;
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    #formTarefa {
+        flex-direction: column;
+    }
+
+    #tarefa,
+    #btnSalvar {
+        width: 100%;
+    }
+
+    #listaTarefas > div {
+        gap: 8px;
+        padding: 14px;
+    }
+
+    #listaTarefas span {
+        flex-basis: 100%;
+        margin-bottom: 5px;
+    }
+
+    #listaTarefas button {
+        flex: 1;
+        padding: 10px 8px;
+        font-size: 13px;
+    }
+}

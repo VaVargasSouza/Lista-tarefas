@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Afazeres</title>
+<meta name="theme-color" content="#6255df">
+<meta name="description" content="Organize suas tarefas de forma simples.">
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
+
+</head>
+<link rel="stylesheet" href="./style.css">
+<body>
+    <header>
+        <h1>Lista de afazeres</h1>
+    </header>
+
+    <main>
+        <section class="formulario">
+            <h2 id="TituloTarefa">Adicionar Tarefa</h2>
+
+            <form id="formTarefa">
+                <label for="tarefa">Tarefa</label>
+                <input
+                    type="text"
+                    id="tarefa"
+                    placeholder="Digite a tarefa"
+                    required
+                >
+
+                <button type="submit" id="btnSalvar">
+                    Adicionar Tarefa
+                </button>
+
+                <button type="button" id="btnCancelar" hidden>
+                    Cancelar edição
+                </button>
+            </form>
+
+            <p id="mensagem" role="status"></p>
+        </section>
+
+        <section class="lista">
+            <h2>Tarefas a realizar</h2>
+            <div id="listaTarefas">Carregando tarefas...</div>
+        </section>
+    </main>
+
+    <script type="module" src="./main.js"></script>
+    
+<script>
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+            navigator.serviceWorker.register("./sw.js")
+                .catch((erro) => {
+                    console.error("Erro ao registrar o app:", erro);
+                });
+        });
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+
+{
+    "id": "./",
+    "name": "Minha Lista de Afazeres",
+    "short_name": "Afazeres",
+    "description": "Organize suas tarefas do dia.",
+    "lang": "pt-BR",
+    "start_url": "./",
+    "scope": "./",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#f5f3ff",
+    "theme_color": "#6255df",
+    "icons": [
+        {
+            "src": "./icon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any"
+        }
+    ]
+}
